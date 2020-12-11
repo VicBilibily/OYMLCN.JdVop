@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OYMLCN.JdVop", "src\OYMLCN.JdVop.csproj", "{C9DAE970-6BF4-49AE-885C-779477A1E543}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OYMLCN.JdVop.Test", "test\OYMLCN.JdVop.Test.csproj", "{96964093-AAE9-4342-BCBE-5FA86965C08D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A3E58C62-5CDC-4812-B39E-E9EDAFEBF146}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9DAE970-6BF4-49AE-885C-779477A1E543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9DAE970-6BF4-49AE-885C-779477A1E543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9DAE970-6BF4-49AE-885C-779477A1E543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9DAE970-6BF4-49AE-885C-779477A1E543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96964093-AAE9-4342-BCBE-5FA86965C08D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96964093-AAE9-4342-BCBE-5FA86965C08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96964093-AAE9-4342-BCBE-5FA86965C08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96964093-AAE9-4342-BCBE-5FA86965C08D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E40829C-7CE7-4DF0-9016-9F603E790FD2}
+	EndGlobalSection
+EndGlobal
