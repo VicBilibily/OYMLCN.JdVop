@@ -11,7 +11,7 @@ namespace OYMLCN.JdVop
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 
             var parameter = new Dictionary<string, string>() {
-                { "token", token }
+                { "token", token },
             };
             if (id.HasValue) parameter.Add("id", id.ToString());
             return await PostAsync<Dictionary<string, int>>(url, parameter);
@@ -67,7 +67,7 @@ namespace OYMLCN.JdVop
                 { "provinceId", provinceId.ToString() },
                 { "cityId", cityId.ToString() },
                 { "countyId", countyId.ToString() },
-                { "townId", townId.ToString() }
+                { "townId", townId.ToString() },
             };
             var url = "/api/area/checkArea";
             return await PostAsync<CheckAreaResult>(url, parameter);
@@ -86,7 +86,7 @@ namespace OYMLCN.JdVop
             var parameter = new Dictionary<string, string>
             {
                 { "token", token },
-                { "address", address }
+                { "address", address },
             };
             var url = "/api/area/getJDAddressFromAddress";
             return await PostAsync<JDAddress>(url, parameter);

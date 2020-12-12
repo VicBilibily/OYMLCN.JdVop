@@ -1,4 +1,6 @@
-﻿namespace OYMLCN.JdVop.Models
+﻿using System;
+
+namespace OYMLCN.JdVop.Models
 {
     /// <summary>
     /// 请求京东响应实体

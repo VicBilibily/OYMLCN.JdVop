@@ -23,7 +23,7 @@ namespace OYMLCN.JdVop
             {
                 { "token", token },
                 { "pageNum", pageNum },
-                { "pageNo", pageNo.ToString() }
+                { "pageNo", pageNo.ToString() },
             };
             var url = "/api/product/getSkuByPage";
             return await PostAsync<PageNumSku>(url, parameter);

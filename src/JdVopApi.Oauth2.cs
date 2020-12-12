@@ -39,7 +39,7 @@ namespace OYMLCN.JdVop
                 { "timestamp", timestamp },
                 { "username", client.UserName },
                 { "password", passwd },
-                { "sign", sign }
+                { "sign", sign },
             };
             return await PostAsync<Oauth2Token>(url, parameter);
         }
@@ -65,7 +65,7 @@ namespace OYMLCN.JdVop
             {
                 { "refresh_token", refreshToken },
                 { "client_id", client.ClientId },
-                { "client_secret", client.ClientSecret }
+                { "client_secret", client.ClientSecret },
             };
             return await PostAsync<Oauth2Token>(url, parameter);
         }

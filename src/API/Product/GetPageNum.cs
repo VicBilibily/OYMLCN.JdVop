@@ -16,7 +16,7 @@ namespace OYMLCN.JdVop
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 
             var parameter = new Dictionary<string, string>() {
-                { "token", token }
+                { "token", token },
             };
             if (contractSkuPoolExt) parameter.Add("queryExts", "contractSkuPoolExt");
             var url = "/api/product/getPageNum";
