@@ -20,7 +20,7 @@ namespace OYMLCN.JdVop
         public static async Task<RspResult<ProductDetail>> ProductGetDetailAsync(string token, string sku, string queryExts = default)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
-          
+
             var parameter = new Dictionary<string, string>
             {
                 { "token",token },
@@ -31,7 +31,7 @@ namespace OYMLCN.JdVop
 
             var url = "/api/product/getDetail";
             var content = await PostAsync(url, parameter);
-            var stream = await content.ReadAsStreamAsync();
+            using var stream = await content.ReadAsStreamAsync();
             var res = await JsonSerializer.DeserializeAsync<RspResult<JsonElement>>(stream, JsonSerializerOptions);
             if (res.Success)
             {

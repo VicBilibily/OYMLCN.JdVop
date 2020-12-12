@@ -30,6 +30,5 @@ namespace OYMLCN.JdVop
         /// <inheritdoc cref="AreaGetJDAddressFromAddressAsync(string, string)"/>
         public async Task<RspResult<JDAddress>> AreaGetJDAddressFromAddressAsync(string address)
             => await AreaGetJDAddressFromAddressAsync(this.AccessToken, address);
-
     }
 }
