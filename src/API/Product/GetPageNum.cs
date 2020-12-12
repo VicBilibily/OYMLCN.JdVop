@@ -11,7 +11,7 @@ namespace OYMLCN.JdVop
         /// </summary>
         /// <param name="token">授权时获取的 AccessToken</param>
         /// <param name="contractSkuPoolExt">包含商品池扩展字段</param>
-        public static async Task<RspResult<List<ProductPageNum>>> ProductGetPageNumAsync(string token, bool contractSkuPoolExt = false)
+        public static async Task<RspResult<List<ProductPageNum>>> GetPageNumAsync(string token, bool contractSkuPoolExt = false)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 
@@ -22,8 +22,8 @@ namespace OYMLCN.JdVop
             var url = "/api/product/getPageNum";
             return await PostAsync<List<ProductPageNum>>(url, parameter);
         }
-        /// <inheritdoc cref="ProductGetPageNumAsync(string, bool)"/>
-        public async Task<RspResult<List<ProductPageNum>>> ProductGetPageNumAsync(bool contractSkuPoolExt = false)
-            => await ProductGetPageNumAsync(this.AccessToken, contractSkuPoolExt);
+        /// <inheritdoc cref="GetPageNumAsync(string, bool)"/>
+        public async Task<RspResult<List<ProductPageNum>>> GetPageNumAsync(bool contractSkuPoolExt = false)
+            => await GetPageNumAsync(this.AccessToken, contractSkuPoolExt);
     }
 }

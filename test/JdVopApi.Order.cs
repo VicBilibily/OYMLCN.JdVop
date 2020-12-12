@@ -82,7 +82,7 @@ namespace OYMLCN.JdVop.Test
                 InvoiceTitle.Personal, InvoiceContent.Major,
                 mobile, name, string.Empty, name);
 
-            var res = await ApiInstance.OrderSubmitOrderAsync(orderBasic, sku, orderInvoice);
+            var res = await ApiInstance.SubmitOrderAsync(orderBasic, sku, orderInvoice);
             Assert.True(res.Success, res.ResultMessage);
             var result = res.Result;
             Assert.NotNull(result);
@@ -187,7 +187,7 @@ namespace OYMLCN.JdVop.Test
         {
             await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.ConfirmReceivedAsync(null, default));
 
-            var res = await ApiInstance.OrderConfirmReceivedAsync(jdOrderNo);
+            var res = await ApiInstance.ConfirmReceivedAsync(jdOrderNo);
             Assert.True(res.Success, res.ResultMessage);
             Assert.True(res.Result);
         }
@@ -200,7 +200,7 @@ namespace OYMLCN.JdVop.Test
             await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.SaveOrUpdatePoNoAsync(null, default, default));
 
             var poNo = DateTime.Now.ToString("yyyyMMddHHmmss");
-            var res = await ApiInstance.OrderSaveOrUpdatePoNoAsync(jdOrderNo, poNo);
+            var res = await ApiInstance.SaveOrUpdatePoNoAsync(jdOrderNo, poNo);
             Assert.True(res.Success, res.ResultMessage);
             Assert.True(res.Result);
         }

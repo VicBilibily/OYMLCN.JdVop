@@ -9,11 +9,11 @@ namespace OYMLCN.JdVop.Test
     {
         [Trait("xUnit", "3、地址api接口")]
         [Fact(DisplayName = "3.1 查询一级地址"), Order(3010)]
-        public async Task AreaGetProvinceTest()
+        public async Task GetProvinceTest()
         {
-            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.AreaGetProvinceAsync(null));
+            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.GetProvinceAsync(null));
 
-            var res = await ApiInstance.AreaGetProvinceAsync();
+            var res = await ApiInstance.GetProvinceAsync();
             Assert.True(res.Success, res.ResultMessage);
             var province = res.Result;
             Assert.NotNull(province);
@@ -22,11 +22,11 @@ namespace OYMLCN.JdVop.Test
         }
         [Trait("xUnit", "3、地址api接口")]
         [Fact(DisplayName = "3.2 查询二级地址"), Order(3020)]
-        public async Task AreaGetCityTest()
+        public async Task GetCityTest()
         {
-            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.AreaGetCityAsync(null, 0));
+            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.GetCityAsync(null, 0));
 
-            var res = await ApiInstance.AreaGetCityAsync(TestHelper.JDArress.ProvinceId);
+            var res = await ApiInstance.GetCityAsync(TestHelper.JDArress.ProvinceId);
             Assert.True(res.Success, res.ResultMessage);
             var city = res.Result;
             Assert.NotNull(city);
@@ -35,11 +35,11 @@ namespace OYMLCN.JdVop.Test
         }
         [Trait("xUnit", "3、地址api接口")]
         [Fact(DisplayName = "3.3 查询三级地址"), Order(3030)]
-        public async Task AreaGetCountyTest()
+        public async Task GetCountyTest()
         {
-            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.AreaGetCountyAsync(null, 0));
+            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.GetCountyAsync(null, 0));
 
-            var res = await ApiInstance.AreaGetCountyAsync(TestHelper.JDArress.CityId);
+            var res = await ApiInstance.GetCountyAsync(TestHelper.JDArress.CityId);
             Assert.True(res.Success, res.ResultMessage);
             var country = res.Result;
             Assert.NotNull(country);
@@ -48,11 +48,11 @@ namespace OYMLCN.JdVop.Test
         }
         [Trait("xUnit", "3、地址api接口")]
         [Fact(DisplayName = "3.4 查询四级地址"), Order(3040)]
-        public async Task AreaGetTownTest()
+        public async Task GetTownTest()
         {
-            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.AreaGetTownAsync(null, 0));
+            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.GetTownAsync(null, 0));
 
-            var res = await ApiInstance.AreaGetTownAsync(TestHelper.JDArress.CountyId);
+            var res = await ApiInstance.GetTownAsync(TestHelper.JDArress.CountyId);
             Assert.True(res.Success, res.ResultMessage);
             var town = res.Result;
             Assert.NotNull(town);
@@ -61,24 +61,24 @@ namespace OYMLCN.JdVop.Test
         }
         [Trait("xUnit", "3、地址api接口")]
         [Fact(DisplayName = "3.5 验证地址有效性"), Order(3050)]
-        public async Task AreaCheckAreaTest()
+        public async Task CheckAreaTest()
         {
-            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.AreaCheckAreaAsync(null, 0, 0, 0, 0));
+            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.CheckAreaAsync(null, 0, 0, 0, 0));
 
             var jdAddr = TestHelper.JDArress;
-            var res = await ApiInstance.AreaCheckAreaAsync(jdAddr.ProvinceId, jdAddr.CityId, jdAddr.CountyId, jdAddr.TownId.Value);
+            var res = await ApiInstance.CheckAreaAsync(jdAddr.ProvinceId, jdAddr.CityId, jdAddr.CountyId, jdAddr.TownId.Value);
             Assert.True(res.Success, res.ResultMessage);
             Assert.NotNull(res.Result);
             Assert.True(res.Result.Success);
         }
         [Trait("xUnit", "3、地址api接口")]
         [Fact(DisplayName = "3.6 地址详情转换京东地址编码"), Order(3060)]
-        public async Task AreaGetJDAddressFromAddressTest()
+        public async Task GetJDAddressFromAddressTest()
         {
-            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.AreaGetJDAddressFromAddressAsync(null, default));
+            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.GetJDAddressFromAddressAsync(null, default));
 
             var jdAddr = TestHelper.JDArress;
-            var res = await ApiInstance.AreaGetJDAddressFromAddressAsync(TestHelper.JDAddressTest);
+            var res = await ApiInstance.GetJDAddressFromAddressAsync(TestHelper.JDAddressTest);
             Assert.True(res.Success, res.ResultMessage);
             var jdAddrRes = res.Result;
             Assert.NotNull(jdAddrRes);

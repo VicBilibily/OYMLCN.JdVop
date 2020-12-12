@@ -15,7 +15,7 @@ namespace OYMLCN.JdVop
         /// <param name="city">京东二级地址编号</param>
         /// <param name="county">京东三级地址编号</param>
         /// <param name="town">京东四级地址编号（三级下无四级地址传0）</param>
-        public static async Task<RspResult<ProductSkuGift>> ProductGetSkuGiftAsync(string token, string skuId, int province, int city, int county, int town = 0)
+        public static async Task<RspResult<ProductSkuGift>> GetSkuGiftAsync(string token, string skuId, int province, int city, int county, int town = 0)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 
@@ -31,8 +31,8 @@ namespace OYMLCN.JdVop
             var url = "/api/product/getSkuGift";
             return await PostAsync<ProductSkuGift>(url, parameter);
         }
-        /// <inheritdoc cref="ProductGetSkuGiftAsync(string, string, int, int, int, int)"/>
-        public async Task<RspResult<ProductSkuGift>> ProductGetSkuGiftAsync(string skuId, int province, int city, int county, int town = 0)
-            => await ProductGetSkuGiftAsync(this.AccessToken, skuId, province, city, county, town);
+        /// <inheritdoc cref="GetSkuGiftAsync(string, string, int, int, int, int)"/>
+        public async Task<RspResult<ProductSkuGift>> GetSkuGiftAsync(string skuId, int province, int city, int county, int town = 0)
+            => await GetSkuGiftAsync(this.AccessToken, skuId, province, city, county, town);
     }
 }

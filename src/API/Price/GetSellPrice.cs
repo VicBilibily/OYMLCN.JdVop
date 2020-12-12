@@ -11,7 +11,7 @@ namespace OYMLCN.JdVop
         /// </summary>
         /// <param name="token">授权时获取的 AccessToken</param>
         /// <param name="sku">商品编号（最高支持100个商品）</param>
-        public static async Task<RspResult<SellPrice[]>> PriceGetSellPriceAsync(string token, string sku)
+        public static async Task<RspResult<SellPrice[]>> GetSellPriceAsync(string token, string sku)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 
@@ -30,8 +30,8 @@ namespace OYMLCN.JdVop
             var url = "/api/price/getSellPrice";
             return await PostAsync<SellPrice[]>(url, parameter);
         }
-        /// <inheritdoc cref="PriceGetSellPriceAsync(string, string)"/>
-        public async Task<RspResult<SellPrice[]>> PriceGetSellPriceAsync(string sku)
-            => await PriceGetSellPriceAsync(this.AccessToken, sku);
+        /// <inheritdoc cref="GetSellPriceAsync(string, string)"/>
+        public async Task<RspResult<SellPrice[]>> GetSellPriceAsync(string sku)
+            => await GetSellPriceAsync(this.AccessToken, sku);
     }
 }

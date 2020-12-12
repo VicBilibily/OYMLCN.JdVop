@@ -11,7 +11,7 @@ namespace OYMLCN.JdVop
         /// </summary>
         /// <param name="token">授权时获取的 AccessToken</param>
         /// <param name="skuId">商品编码</param>
-        public static async Task<RspResult<ProductSimilarSku[]>> ProductGetSimilarSkuAsync(string token, string skuId)
+        public static async Task<RspResult<ProductSimilarSku[]>> GetSimilarSkuAsync(string token, string skuId)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 
@@ -23,8 +23,8 @@ namespace OYMLCN.JdVop
             var url = "/api/product/getSimilarSku";
             return await PostAsync<ProductSimilarSku[]>(url, parameter);
         }
-        /// <inheritdoc cref="ProductGetSimilarSkuAsync(string, string)"/>
-        public async Task<RspResult<ProductSimilarSku[]>> ProductGetSimilarSkuAsync(string skuId)
-            => await ProductGetSimilarSkuAsync(this.AccessToken, skuId);
+        /// <inheritdoc cref="GetSimilarSkuAsync(string, string)"/>
+        public async Task<RspResult<ProductSimilarSku[]>> GetSimilarSkuAsync(string skuId)
+            => await GetSimilarSkuAsync(this.AccessToken, skuId);
     }
 }

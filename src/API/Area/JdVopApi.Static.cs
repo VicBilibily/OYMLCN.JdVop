@@ -21,7 +21,7 @@ namespace OYMLCN.JdVop
         ///   查询京东一级地址列表。
         /// </summary>
         /// <param name="token">授权时获取的 AccessToken</param>
-        public static async Task<RspResult<Dictionary<string, int>>> AreaGetProvinceAsync(string token)
+        public static async Task<RspResult<Dictionary<string, int>>> GetProvinceAsync(string token)
             => await AreaGetDataAsync(token, "/api/area/getProvince", default);
     
         /// <summary>
@@ -29,7 +29,7 @@ namespace OYMLCN.JdVop
         /// </summary>
         /// <param name="token">授权时获取的 AccessToken</param>
         /// <param name="id">一级地址ID</param>
-        public static async Task<RspResult<Dictionary<string, int>>> AreaGetCityAsync(string token, int id)
+        public static async Task<RspResult<Dictionary<string, int>>> GetCityAsync(string token, int id)
             => await AreaGetDataAsync(token, "/api/area/getCity", id);
       
         /// <summary>
@@ -37,7 +37,7 @@ namespace OYMLCN.JdVop
         /// </summary>
         /// <param name="token">授权时获取的 AccessToken</param>
         /// <param name="id">二级地址ID</param>
-        public static async Task<RspResult<Dictionary<string, int>>> AreaGetCountyAsync(string token, int id)
+        public static async Task<RspResult<Dictionary<string, int>>> GetCountyAsync(string token, int id)
             => await AreaGetDataAsync(token, "/api/area/getCounty", id);
       
         /// <summary>
@@ -45,7 +45,7 @@ namespace OYMLCN.JdVop
         /// </summary>
         /// <param name="token">授权时获取的 AccessToken</param>
         /// <param name="id">三级地址ID</param>
-        public static async Task<RspResult<Dictionary<string, int>>> AreaGetTownAsync(string token, int id)
+        public static async Task<RspResult<Dictionary<string, int>>> GetTownAsync(string token, int id)
             => await AreaGetDataAsync(token, "/api/area/getTown", id);
 
 
@@ -57,7 +57,7 @@ namespace OYMLCN.JdVop
         /// <param name="cityId">二级地址ID</param>
         /// <param name="countyId">三级地址ID</param>
         /// <param name="townId">四级地址ID（若三级地址下无四级地址传0）</param>
-        public static async Task<RspResult<CheckAreaResult>> AreaCheckAreaAsync(string token, int provinceId, int cityId, int countyId, int townId = 0)
+        public static async Task<RspResult<CheckAreaResult>> CheckAreaAsync(string token, int provinceId, int cityId, int countyId, int townId = 0)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 
@@ -79,7 +79,7 @@ namespace OYMLCN.JdVop
         /// </summary>
         /// <param name="token">授权时获取的 AccessToken</param>
         /// <param name="address">地址</param>
-        public static async Task<RspResult<JDAddress>> AreaGetJDAddressFromAddressAsync(string token, string address)
+        public static async Task<RspResult<JDAddress>> GetJDAddressFromAddressAsync(string token, string address)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 

@@ -24,7 +24,7 @@ namespace OYMLCN.JdVop
             return await PostAsync<bool>(url, parameter);
         }
         /// <inheritdoc cref="ConfirmReceivedAsync(string, long)"/>
-        public async Task<RspResult<bool>> OrderConfirmReceivedAsync(long jdOrderId)
+        public async Task<RspResult<bool>> ConfirmReceivedAsync(long jdOrderId)
             => await ConfirmReceivedAsync(this.AccessToken, jdOrderId);
     }
 }

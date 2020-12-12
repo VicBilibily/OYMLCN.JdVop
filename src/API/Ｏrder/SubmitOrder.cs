@@ -32,7 +32,7 @@ namespace OYMLCN.JdVop
             return await PostAsync<OrderSubmitResult>(url, union.ToDictionary(v => v.Key, v => v.Value));
         }
         /// <inheritdoc cref="SubmitOrderAsync(string, OrderBasic, OrderSku[], OrderInvoice, OrderReserving)"/>
-        public async Task<RspResult<OrderSubmitResult>> OrderSubmitOrderAsync(OrderBasic basic, OrderSku[] sku, OrderInvoice invoice, OrderReserving reserving = null)
+        public async Task<RspResult<OrderSubmitResult>> SubmitOrderAsync(OrderBasic basic, OrderSku[] sku, OrderInvoice invoice, OrderReserving reserving = null)
             => await SubmitOrderAsync(this.AccessToken, basic, sku, invoice, reserving);
     }
 }

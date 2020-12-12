@@ -19,7 +19,7 @@ namespace OYMLCN.JdVop
         /// <param name="city">京东二级地址编号</param>
         /// <param name="county">京东三级地址编号</param>
         /// <param name="town">京东四级地址编号（三级下无四级地址传0）</param>
-        public static async Task<RspResult<StockResult[]>> StockGetNewStockByIdAsync(string token, SkuNum[] skuNums, int province, int city, int county, int town = 0)
+        public static async Task<RspResult<StockResult[]>> GetNewStockByIdAsync(string token, SkuNum[] skuNums, int province, int city, int county, int town = 0)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 
@@ -41,8 +41,8 @@ namespace OYMLCN.JdVop
                 result.Result = JsonSerializer.Deserialize<StockResult[]>(rsp.Result, JsonSerializerOptions);
             return result;
         }
-        /// <inheritdoc cref="StockGetNewStockByIdAsync(string, SkuNum[], int, int, int, int)"/>
-        public async Task<RspResult<StockResult[]>> StockGetNewStockByIdAsync(SkuNum[] skuNums, int province, int city, int county, int town = 0)
-            => await StockGetNewStockByIdAsync(this.AccessToken, skuNums, province, city, county, town);
+        /// <inheritdoc cref="GetNewStockByIdAsync(string, SkuNum[], int, int, int, int)"/>
+        public async Task<RspResult<StockResult[]>> GetNewStockByIdAsync(SkuNum[] skuNums, int province, int city, int county, int town = 0)
+            => await GetNewStockByIdAsync(this.AccessToken, skuNums, province, city, county, town);
     }
 }

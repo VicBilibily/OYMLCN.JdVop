@@ -11,7 +11,7 @@ namespace OYMLCN.JdVop
         /// </summary>
         /// <param name="token">授权时获取的 AccessToken</param>
         /// <param name="sku">商品编号(支持批量，最高支持100个商品)</param>
-        public static async Task<RspResult<ProductSkuState[]>> ProductSkuStateAsync(string token, string sku)
+        public static async Task<RspResult<ProductSkuState[]>> SkuStateAsync(string token, string sku)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 
@@ -23,8 +23,8 @@ namespace OYMLCN.JdVop
             var url = "/api/product/skuState";
             return await PostAsync<ProductSkuState[]>(url, parameter);
         }
-        /// <inheritdoc cref="ProductSkuStateAsync(string, string)"/>
-        public async Task<RspResult<ProductSkuState[]>> ProductSkuStateAsync(string sku)
-            => await ProductSkuStateAsync(this.AccessToken, sku);
+        /// <inheritdoc cref="SkuStateAsync(string, string)"/>
+        public async Task<RspResult<ProductSkuState[]>> SkuStateAsync(string sku)
+            => await SkuStateAsync(this.AccessToken, sku);
     }
 }

@@ -16,7 +16,7 @@ namespace OYMLCN.JdVop
         /// <param name="city">京东二级地址编号</param>
         /// <param name="county">京东三级地址编号</param>
         /// <param name="town">京东四级地址编号（三级下无四级地址传0）</param>
-        public static async Task<ProductIsCodResult> ProductGetIsCodAsync(string token, string skuIds, int province, int city, int county, int town = 0)
+        public static async Task<ProductIsCodResult> GetIsCodAsync(string token, string skuIds, int province, int city, int county, int town = 0)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 
@@ -34,8 +34,8 @@ namespace OYMLCN.JdVop
             var content = await PostAsync(url, parameter);
             return await content.ReadFromJsonAsync<ProductIsCodResult>(JsonSerializerOptions);
         }
-        /// <inheritdoc cref="ProductGetIsCodAsync(string, string, int, int, int, int)"/>
-        public async Task<ProductIsCodResult> ProductGetIsCodAsync(string skuIds, int province, int city, int county, int town = 0)
-            => await ProductGetIsCodAsync(this.AccessToken, skuIds, province, city, county, town);
+        /// <inheritdoc cref="GetIsCodAsync(string, string, int, int, int, int)"/>
+        public async Task<ProductIsCodResult> GetIsCodAsync(string skuIds, int province, int city, int county, int town = 0)
+            => await GetIsCodAsync(this.AccessToken, skuIds, province, city, county, town);
     }
 }

@@ -11,7 +11,7 @@ namespace OYMLCN.JdVop
         /// </summary>
         /// <param name="token">授权时获取的 AccessToken</param>
         /// <param name="cid">分类id（可通过商品详情接口查询）</param>
-        public static async Task<RspResult<ProductCategory>> ProductGetCategoryAsync(string token, long cid)
+        public static async Task<RspResult<ProductCategory>> GetCategoryAsync(string token, long cid)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
          
@@ -23,8 +23,8 @@ namespace OYMLCN.JdVop
             var url = "/api/product/getCategory";
             return await PostAsync<ProductCategory>(url, parameter);
         }
-        /// <inheritdoc cref="ProductGetCategoryAsync(string, long)"/>
-        public async Task<RspResult<ProductCategory>> ProductGetCategoryAsync(long cid)
-            => await ProductGetCategoryAsync(this.AccessToken, cid);
+        /// <inheritdoc cref="GetCategoryAsync(string, long)"/>
+        public async Task<RspResult<ProductCategory>> GetCategoryAsync(long cid)
+            => await GetCategoryAsync(this.AccessToken, cid);
     }
 }

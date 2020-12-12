@@ -18,7 +18,7 @@ namespace OYMLCN.JdVop
         /// <param name="city">京东二级地址编号</param>
         /// <param name="county">京东三级地址编号</param>
         /// <param name="town">京东四级地址编号（三级下无四级地址传0）</param>
-        public static async Task<ProductTotalCheckResult> ProductTotalCheckAsync(string token, SkuNum[] skuNums, int province, int city, int county, int town = 0)
+        public static async Task<ProductTotalCheckResult> TotalCheckAsync(string token, SkuNum[] skuNums, int province, int city, int county, int town = 0)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
            
@@ -44,8 +44,8 @@ namespace OYMLCN.JdVop
             var content = await PostAsync(url, parameter);
             return await content.ReadFromJsonAsync<ProductTotalCheckResult>(JsonSerializerOptions);
         }
-        /// <inheritdoc cref="ProductTotalCheckAsync(string, SkuNum[], int, int, int, int)"/>
-        public async Task<ProductTotalCheckResult> ProductTotalCheckAsync(SkuNum[] skuNums, int province, int city, int county, int town = 0)
-            => await ProductTotalCheckAsync(this.AccessToken, skuNums, province, city, county, town);
+        /// <inheritdoc cref="TotalCheckAsync(string, SkuNum[], int, int, int, int)"/>
+        public async Task<ProductTotalCheckResult> TotalCheckAsync(SkuNum[] skuNums, int province, int city, int county, int town = 0)
+            => await TotalCheckAsync(this.AccessToken, skuNums, province, city, county, town);
     }
 }

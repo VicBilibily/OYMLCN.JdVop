@@ -26,7 +26,7 @@ namespace OYMLCN.JdVop
             return await PostAsync<bool>(url, parameter);
         }
         /// <inheritdoc cref="SaveOrUpdatePoNoAsync(string, long, string)"/>
-        public async Task<RspResult<bool>> OrderSaveOrUpdatePoNoAsync(long jdOrderId, string poNo)
+        public async Task<RspResult<bool>> SaveOrUpdatePoNoAsync(long jdOrderId, string poNo)
             => await SaveOrUpdatePoNoAsync(this.AccessToken, jdOrderId, poNo);
     }
 }

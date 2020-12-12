@@ -17,7 +17,7 @@ namespace OYMLCN.JdVop
         ///   商品维度扩展字段，当入参输入某个扩展字段后，出参会返回该字段对应的出参。
         ///   可以根据需要选用。
         /// </param>
-        public static async Task<RspResult<ProductDetail>> ProductGetDetailAsync(string token, string sku, string queryExts = default)
+        public static async Task<RspResult<ProductDetail>> GetDetailAsync(string token, string sku, string queryExts = default)
         {
             if (string.IsNullOrEmpty(token)) throw AccessTokenArgumentException;
 
@@ -69,8 +69,8 @@ namespace OYMLCN.JdVop
             }
             return await JsonSerializer.DeserializeAsync<RspResult<ProductDetail>>(stream, JsonSerializerOptions);
         }
-        /// <inheritdoc cref="ProductGetDetailAsync(string, string, string)"/>
-        public async Task<RspResult<ProductDetail>> ProductGetDetailAsync(string sku, string queryExts = default)
-            => await ProductGetDetailAsync(this.AccessToken, sku, queryExts);
+        /// <inheritdoc cref="GetDetailAsync(string, string, string)"/>
+        public async Task<RspResult<ProductDetail>> GetDetailAsync(string sku, string queryExts = default)
+            => await GetDetailAsync(this.AccessToken, sku, queryExts);
     }
 }
