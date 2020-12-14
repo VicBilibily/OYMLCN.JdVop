@@ -5,24 +5,30 @@
     <DocumentationFile>.\bin\JdVopApi.xml</DocumentationFile>
     <AssemblyOriginatorKeyFile>VicBilibily欧阳敏岚.snk</AssemblyOriginatorKeyFile>
 
-    <Version>0.1.0-beta</Version>
+    <Version>0.1.0-beta1</Version>
     <Authors>VicBilibily欧阳敏岚</Authors>
     <Product>大客户开放平台VOP实物接口</Product>
 
     <Copyright>Copyright (c) VicBilibily, 2008-2021 OYMLCN. https://oyml.cn</Copyright>
     <PackageProjectUrl>https://github.com/VicBilibily/OYMLCN.JdVop</PackageProjectUrl>
-    <PackageLicenseFile>README.md</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
 
     <RepositoryUrl>https://github.com/VicBilibily/OYMLCN.JdVop.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <SignAssembly>true</SignAssembly>
+    <Description>大客户开放平台VOP实物接口</Description>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\README.md">
+    <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
