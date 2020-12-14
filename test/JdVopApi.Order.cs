@@ -229,5 +229,17 @@ namespace OYMLCN.JdVop.Test
             Assert.NotEmpty(res.Result);
         }
 
+
+        [Trait("xUnit", "8、支付API接口")]
+        [Theory(DisplayName = "8.3 发起支付接口"), Order(8030)]
+        [InlineData(133724048178)]
+        public async Task DoPayTest(long jdOrderId)
+        {
+            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.BatchConfirmReceivedAsync(null, default));
+
+            var res = await ApiInstance.DoPayAsync(jdOrderId.ToString());
+            Assert.NotNull(res);
+        }
+
     }
 }
