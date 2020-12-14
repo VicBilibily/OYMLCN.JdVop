@@ -235,7 +235,7 @@ namespace OYMLCN.JdVop.Test
         [InlineData(133724048178)]
         public async Task DoPayTest(long jdOrderId)
         {
-            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.BatchConfirmReceivedAsync(null, default));
+            await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.DoPayAsync(null, default));
 
             var res = await ApiInstance.DoPayAsync(jdOrderId.ToString());
             Assert.NotNull(res);

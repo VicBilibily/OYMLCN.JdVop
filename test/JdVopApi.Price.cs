@@ -43,7 +43,7 @@ namespace OYMLCN.JdVop.Test
         }
 
         [Trait("xUnit", "8、支付API接口")]
-        [Fact(DisplayName = "8.2 查询余额变动明细"), Order(820)]
+        [Fact(DisplayName = "8.2 查询余额变动明细"), Order(8020)]
         public async Task GetBalanceDetailTest()
         {
             await Assert.ThrowsAsync<ArgumentException>(() => JdVopApi.GetBalanceDetailAsync(null));

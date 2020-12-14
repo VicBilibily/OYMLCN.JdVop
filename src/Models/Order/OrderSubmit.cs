@@ -224,7 +224,6 @@ namespace OYMLCN.JdVop.Models
         ///   <para>如果 <paramref name="selectedInvoiceTitle"/> 为
         ///   <see cref="InvoiceTitle.Company"/> 时此字段必须</para>
         /// </param>
-        /// <param name="poNo">采购单号，长度范围[1-26]</param>
         public OrderInvoice(
             InvoiceState invoiceState, InvoiceType invoiceType,
             InvoiceTitle selectedInvoiceTitle, InvoiceContent invoiceContent,
